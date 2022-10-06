@@ -11,7 +11,8 @@ namespace MiniShop.WebUI.Controllers
         {
             
 
-
+            //Biz burada direkt veri tabanına erişmek ile ilgili kod yazmıyoruz.
+            //Business katmanındaki ilgili ürünlerin getirme metodunu çalıştır.
             return View();
         }
 

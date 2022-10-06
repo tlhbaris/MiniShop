@@ -1,14 +1,21 @@
+using MiniShop.Data.Concrete.EfCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-//Middlewares - uygulamaya her istekte bulunulduðunda çalýþtýrýlan þeylerdir.
+//Middlewares - uygulamaya her istekte bulunulduï¿½unda ï¿½alï¿½ï¿½tï¿½rï¿½lan ï¿½eylerdir.
 if (!app.Environment.IsDevelopment())
 {
+    
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
+} else{
+    SeedDatabase.Seed();
 }
+
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

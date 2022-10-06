@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using MiniShop.Entitiy;
+using MiniShop.Entity;
 
 namespace MiniShop.Data.Concrete
 {

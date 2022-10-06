@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MiniShop.Entitiy
+namespace MiniShop.Entity
 
 
 

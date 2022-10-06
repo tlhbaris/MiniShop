@@ -1,4 +1,4 @@
-namespace MiniShop.Entitiy
+namespace MiniShop.Entity
 {
     public class ProductCategory
     {
