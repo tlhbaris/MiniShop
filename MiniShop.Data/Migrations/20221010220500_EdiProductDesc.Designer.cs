@@ -11,7 +11,7 @@ using MiniShop.Data.Concrete.EfCore;
 namespace MiniShop.Data.Migrations
 {
     [DbContext(typeof(MiniShopContext))]
-    [Migration("20221005185619_EdiProductDesc")]
+    [Migration("20221010220500_EdiProductDesc")]
     partial class EdiProductDesc
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

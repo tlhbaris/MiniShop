@@ -1,4 +1,5 @@
 ﻿using MiniShop.Business.Abstract;
+using MiniShop.Data.Abstract;
 using MiniShop.Entity;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,16 @@ namespace MiniShop.Business.Concrete
 {
     public class ProductManager : IProductService
     {
+        private IProductRepository _productRepository;
+
+        public ProductManager(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
+
         public List<Product> GetAll()
         {
-            throw new NotImplementedException();
+            return _productRepository.GetAll();
         }
 
 

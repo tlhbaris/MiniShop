@@ -1,36 +1,31 @@
-﻿
+﻿@using MiniShop.Entity
 
+@model List<Product>
+    
 <div class="row">
     <div class = "col-3">
             @* Buraya kategorileri getireceğiz *@
-            <div class ="card">
-                <div class = "card-header">
-                    <h5>Search</h5>
-                </div>
-                <div class ="card-body">
-                    <form action="">
-                        <div class="form-group">   
-                            <input type="text" name="" id="" class="form-control" placeholder="Search">
-                            <div>
-                                <button type="submit" class="btn btn-sm btn-danger w-100">Search</button>
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
-            </div>
+            @await Component.InvokeAsync("Categories")
+            @await Html.PartialAsync("_search")
     </div>
 
     <div class="col-9">
         <div class = "row">  
             @* Buraya da Product'lar gelecek. *@
             
+            @foreach (var product in Model)
+            {
+                <div class ="col-4" >
+                    @await Html.PartialAsync("_product", product)
+                </div>
+                
+            }
+
+
 
             @for (int i = 1; i < 10; i++)
             {
-                <div class ="col-4" >
-                    <h3>Product-@i</h3>
-                </div>
+                
                 
             }
         </div>

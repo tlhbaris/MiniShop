@@ -1,4 +1,5 @@
-﻿using MiniShop.Data.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using MiniShop.Data.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,17 @@ using System.Threading.Tasks;
 
 namespace MiniShop.Data.Concrete.EfCore
 {
-    public class EfCoreGenericRepository<TEntity> : IRepository<TEntity>
+    public class EfCoreGenericRepository<TEntity, TContext> : IRepository<TEntity>
+        where TEntity : class
+        where TContext: DbContext, new()
     {
         public List<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            using (var context = new TContext())
+            {
+                //context.Product ya da context.Category gibi(SET methodu)
+                return context.Set<TEntity>().ToList(); 
+            }
         }
 
 

@@ -1,6 +1,14 @@
+using MiniShop.Business.Abstract;
+using MiniShop.Business.Concrete;
+using MiniShop.Data.Abstract;
 using MiniShop.Data.Concrete.EfCore;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
+builder.Services.AddScoped<IProductRepository, EfCoreProductRepository>();
+builder.Services.AddScoped<IProductService, ProductManager>();
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
+
 
 builder.Services.AddControllersWithViews();
 
