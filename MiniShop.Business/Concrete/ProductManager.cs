@@ -23,11 +23,6 @@ namespace MiniShop.Business.Concrete
             return _productRepository.GetAll();
         }
 
-
-
-
-
-
         public void Create(Product entity)
         {
             throw new NotImplementedException();
@@ -46,6 +41,16 @@ namespace MiniShop.Business.Concrete
         public void Update(Product entity)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Product> GetHomePageProducts()
+        {
+            return _productRepository.GetHomePageProducts();
+        }
+
+        public Product GetProductDetails(string url)
+        {
+            return _productRepository.GetProductDetails(url);
         }
     }
 }

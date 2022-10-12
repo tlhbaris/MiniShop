@@ -11,6 +11,8 @@ namespace MiniShop.Data.Abstract
     {   
         //Bu sadece Product entitymizi ilgilendiren işlemleri barındırıyor.
 
+        List<Product> GetHomePageProducts();
+        Product GetProductDetails(string url);
         
     }
 }

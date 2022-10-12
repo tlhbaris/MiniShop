@@ -23,11 +23,12 @@ namespace MiniShop.WebUI.Controllers
 
             //Biz burada direkt veri tabanına erişmek ile ilgili kod yazmıyoruz.
             //Business katmanındaki ilgili ürünlerin getirme metodunu çalıştır.
-            var allProduct = _productService.GetAll();
+            var allProduct = _productService.GetHomePageProducts();
             return View(allProduct);
             
         }
 
         
     }
+
 }

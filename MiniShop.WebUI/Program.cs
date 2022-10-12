@@ -32,6 +32,14 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
+app.MapControllerRoute(
+    name:"productdetails",
+    pattern:"{url}",
+    defaults: new {controller="MiniShop", action="Details"}
+    );
+
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
