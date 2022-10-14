@@ -52,5 +52,15 @@ namespace MiniShop.Business.Concrete
         {
             return _productRepository.GetProductDetails(url);
         }
+
+        public List<Product> GetProductsByCategory(string category)
+        {
+            return _productRepository.GetProductsByCategory(category);
+        }
+
+        public List<Product> GetSearchResult(string searchString)
+        {
+            return _productRepository.GetSearchResult(searchString);
+        }
     }
 }

@@ -1,0 +1,24 @@
+﻿@model List<Product>
+
+<div class="row">
+    <div class = "col-3">
+            @* Buraya kategorileri getireceğiz *@
+            @await Component.InvokeAsync("Categories")
+            @await Html.PartialAsync("_search")
+    </div>
+
+    <div class="col-9">
+        <div class = "row">  
+            @* Buraya da Product'lar gelecek. *@
+            
+            @foreach (var product in Model)
+            {
+                <div class ="col-4" >
+                    @await Html.PartialAsync("_product", product)
+                </div>
+            }
+
+        </div>
+
+    </div>
+</div>
