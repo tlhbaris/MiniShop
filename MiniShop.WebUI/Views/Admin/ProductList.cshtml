@@ -1,0 +1,37 @@
+@model List<Product>
+
+<div class="row">
+    <div class="col-12">
+        <h1>Admin Products</h1>
+        <hr>
+        <table class="table table-bordered">
+            <thead>
+                <tr> 
+                    <td style="width: 30px;">Id</td>
+                    <td style="width: 100px;">Image</td>
+                    <td>Name</td>
+                    <td style="width:40px;">Price</td>
+                    <td style="width: 130px">İşlem</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.ProductId</td>
+                        <td>
+                            <img src="~/images/@product.ImageUrl" width="80"/>
+                        </td>
+                        <td>@product.Name</td>
+                        <td>@product.Price</td>
+                       <td>
+                            <a href="#" class="btn btn-sm btn-warning mr-2">Edit</a>
+                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

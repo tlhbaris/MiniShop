@@ -33,6 +33,11 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "adminproductlist",
+    pattern: "admin/products",
+    defaults: new { controller = "Admin", action = "ProductList" }
+    );
+app.MapControllerRoute(
     name: "search",
     pattern: "search",
     defaults: new { controller = "MiniShop", action = "search" }
