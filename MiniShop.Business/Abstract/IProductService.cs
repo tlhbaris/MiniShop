@@ -18,5 +18,6 @@ namespace MiniShop.Business.Abstract
         Product GetProductDetails(string url);
         List<Product> GetProductsByCategory(string category);
         List<Product> GetSearchResult(string searchString);
+        
     }
 }

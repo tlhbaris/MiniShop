@@ -25,7 +25,7 @@ namespace MiniShop.Business.Concrete
 
         public void Create(Product entity)
         {
-            throw new NotImplementedException();
+            _productRepository.Create(entity);
         }
 
         public void Delete(Product entity)
@@ -35,12 +35,12 @@ namespace MiniShop.Business.Concrete
 
         public Product GetById(int id)
         {
-            throw new NotImplementedException();
+           return _productRepository.GetById(id);
         }
 
         public void Update(Product entity)
         {
-            throw new NotImplementedException();
+            _productRepository.Update(entity);
         }
 
         public List<Product> GetHomePageProducts()

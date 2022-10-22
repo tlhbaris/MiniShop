@@ -33,6 +33,11 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "createproduct",
+    pattern: "admin/createproduct",
+    defaults: new { controller = "Admin", action = "ProductCreate" }
+    );
+app.MapControllerRoute(
     name: "adminproductlist",
     pattern: "admin/products",
     defaults: new { controller = "Admin", action = "ProductList" }

@@ -25,7 +25,11 @@ namespace MiniShop.Data.Concrete.EfCore
 
         public void Create(TEntity entity)
         {
-            throw new NotImplementedException();
+            using(var context =  new TContext())
+            {
+                context.Set<TEntity>().Add(entity);
+                context.SaveChanges();
+            }
         }
 
         public void Delete(int id)
@@ -35,12 +39,20 @@ namespace MiniShop.Data.Concrete.EfCore
 
         public TEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            using(var context = new TContext())
+            {
+                return context.Set<TEntity>().Find(id);
+            }
         }
 
         public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            using(var context = new TContext())
+            {
+                context.Entry(entity).State=EntityState.Modified; //Sadece değişiklik yapılmış olanları yazar.
+                // context.Set<TEntity>().Update(entity);//Bu tüm alanları yeniden yazar.
+                context.SaveChanges();
+            }
         }
     }
 }
